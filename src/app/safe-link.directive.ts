@@ -8,8 +8,8 @@ import { Directive, input } from "@angular/core";
     }
 })
 export class SafeLinkDirective{
-    queryParam = input('myapp'); //default fallback is myapp
-
+    queryParam = input('myapp', {alias: 'appSafeLink'}); //default fallback is myapp
+    //this variable can also be named as appSafeLink, no problem in that to give input like appSafeLink = "something"
     constructor(){
         console.log('Safe link directive is active');
     }
