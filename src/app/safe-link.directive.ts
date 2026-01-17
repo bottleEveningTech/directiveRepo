@@ -16,6 +16,9 @@ export class SafeLinkDirective{
         const hasConfirmed = window.confirm('Do you want to leave the app');
 
         if(hasConfirmed){
+            const address = (event.target as HTMLAnchorElement).href;
+            (event.target as HTMLAnchorElement).href = address + '?from = myapp';
+
             return;
         }
 
